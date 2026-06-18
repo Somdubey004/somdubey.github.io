@@ -3,244 +3,598 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Som Dubey | Data Analyst Portfolio</title>
+
+<title>Sharad Dubey | Data Analyst Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+
+:root{
+    --bg:#0f172a;
+    --card:#1e293b;
+    --card2:#334155;
+    --primary:#38bdf8;
+    --secondary:#6366f1;
+    --text:#f8fafc;
+    --muted:#94a3b8;
+}
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Segoe UI',sans-serif;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
 }
 
 body{
-    background:#f4f7fa;
-    color:#333;
-    line-height:1.6;
+    background:linear-gradient(135deg,#020617,#0f172a,#111827);
+    color:var(--text);
 }
 
-header{
-    background:linear-gradient(135deg,#0f172a,#2563eb);
+/* NAVBAR */
+
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:999;
+    backdrop-filter:blur(15px);
+    background:rgba(15,23,42,.8);
+    padding:18px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:1.4rem;
+    font-weight:700;
+    color:var(--primary);
+}
+
+nav ul{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+nav a{
     color:white;
-    text-align:center;
-    padding:100px 20px;
+    text-decoration:none;
 }
 
-header h1{
-    font-size:3rem;
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:120px 8%;
+    gap:70px;
+    flex-wrap:wrap;
 }
 
-header p{
-    margin-top:10px;
-    font-size:1.2rem;
+.profile{
+    width:320px;
+    height:320px;
+    border-radius:50%;
+    object-fit:cover;
+    border:6px solid var(--primary);
+    box-shadow:0 0 35px rgba(56,189,248,.5);
+}
+
+.hero-content{
+    max-width:650px;
+}
+
+.hero-content h1{
+    font-size:3.5rem;
+}
+
+.hero-content h2{
+    color:var(--primary);
+    margin:10px 0;
+}
+
+.hero-content p{
+    color:var(--muted);
+    margin:20px 0;
+    line-height:1.8;
 }
 
 .btn{
     display:inline-block;
-    margin-top:25px;
     padding:12px 25px;
-    background:white;
-    color:#2563eb;
+    margin-right:10px;
+    background:var(--primary);
+    color:black;
     text-decoration:none;
-    border-radius:5px;
-    font-weight:bold;
-    transition:0.3s;
+    border-radius:8px;
+    font-weight:600;
 }
 
-.btn:hover{
-    background:#e2e8f0;
+.btn2{
+    background:transparent;
+    border:2px solid var(--primary);
+    color:white;
 }
+
+/* KPI CARDS */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    padding:0 8% 70px;
+}
+
+.stat-card{
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(10px);
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    border:1px solid rgba(255,255,255,.1);
+}
+
+.stat-card h2{
+    color:var(--primary);
+    font-size:2rem;
+}
+
+/* SECTION */
 
 section{
-    padding:60px 10%;
+    padding:80px 8%;
 }
 
-.section-title{
+.title{
     text-align:center;
-    margin-bottom:40px;
-    font-size:2rem;
-    color:#0f172a;
+    margin-bottom:50px;
+    font-size:2.4rem;
 }
+
+.title span{
+    color:var(--primary);
+}
+
+/* ABOUT */
 
 .about{
-    text-align:center;
-    max-width:800px;
+    max-width:900px;
     margin:auto;
-}
-
-.skills{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-    gap:20px;
-}
-
-.skill-card{
-    background:white;
-    padding:20px;
     text-align:center;
-    border-radius:10px;
-    box-shadow:0 3px 10px rgba(0,0,0,0.1);
-    transition:0.3s;
+    color:var(--muted);
+    line-height:1.9;
 }
 
-.skill-card:hover{
-    transform:translateY(-5px);
-}
+/* SKILLS */
 
-.projects{
+.skills-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:25px;
 }
 
-.project-card{
-    background:white;
-    padding:25px;
-    border-radius:10px;
-    box-shadow:0 3px 10px rgba(0,0,0,0.1);
+.skill{
+    background:var(--card);
+    padding:20px;
+    border-radius:15px;
 }
 
-.project-card h3{
+.skill-title{
+    display:flex;
+    justify-content:space-between;
     margin-bottom:10px;
-    color:#2563eb;
 }
 
-.certifications{
+.progress{
+    height:10px;
+    background:#475569;
+    border-radius:50px;
+}
+
+.progress div{
+    height:100%;
+    background:linear-gradient(90deg,var(--primary),var(--secondary));
+    border-radius:50px;
+}
+
+/* PROJECTS */
+
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+    gap:30px;
+}
+
+.project{
+    background:var(--card);
+    border-radius:20px;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.project:hover{
+    transform:translateY(-8px);
+}
+
+.project img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.project-content{
+    padding:25px;
+}
+
+.project h3{
+    margin-bottom:10px;
+}
+
+.project p{
+    color:var(--muted);
+}
+
+.tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:15px 0;
+}
+
+.tags span{
+    background:var(--primary);
+    color:black;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:.85rem;
+    font-weight:600;
+}
+
+.learn{
+    margin-top:15px;
+}
+
+.learn li{
+    margin-left:20px;
+    color:var(--muted);
+}
+
+/* CERTIFICATIONS */
+
+.certs{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+    gap:25px;
 }
 
-.cert-card{
-    background:white;
-    padding:20px;
-    border-radius:10px;
-    box-shadow:0 3px 10px rgba(0,0,0,0.1);
+.cert{
+    background:var(--card);
+    padding:25px;
+    border-radius:15px;
 }
+
+/* CONTACT */
 
 .contact{
     text-align:center;
 }
 
-.contact a{
-    color:#2563eb;
-    text-decoration:none;
-    font-weight:bold;
+.contact p{
+    margin:10px;
+    color:var(--muted);
 }
+
+.contact a{
+    color:var(--primary);
+    text-decoration:none;
+}
+
+/* FOOTER */
 
 footer{
     text-align:center;
-    padding:20px;
-    background:#0f172a;
-    color:white;
+    padding:25px;
+    background:#020617;
+    color:var(--muted);
 }
+
+/* MOBILE */
 
 @media(max-width:768px){
-    header h1{
-        font-size:2.2rem;
-    }
+
+.hero-content h1{
+    font-size:2.5rem;
 }
+
+.profile{
+    width:250px;
+    height:250px;
+}
+
+}
+
 </style>
 </head>
-
 <body>
 
-<header>
-    <h1>Som Dubey</h1>
-    <p>Aspiring Data Analyst | SQL | Excel | Power BI | Python</p>
-    <a href="#projects" class="btn">View Projects</a>
-</header>
+<nav>
+    <div class="logo">Sharad Dubey</div>
+
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+
+    <img src="images/profile.jpg" class="profile" alt="Profile Photo">
+
+    <div class="hero-content">
+
+        <h1>Sharad Dubey</h1>
+
+        <h2>Aspiring Data Analyst</h2>
+
+        <p>
+            I transform raw data into meaningful insights using SQL,
+            Excel, Power BI, Python and Azure. Passionate about
+            analytics, dashboard development and business intelligence.
+        </p>
+
+        <a href="resume/Sharad_Dubey_Resume.pdf" class="btn">
+            Download Resume
+        </a>
+
+        <a href="#projects" class="btn btn2">
+            View Projects
+        </a>
+
+    </div>
+
+</section>
+
+<div class="stats">
+
+    <div class="stat-card">
+        <h2>10+</h2>
+        <p>Projects Completed</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>5+</h2>
+        <p>Tools Mastered</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>100%</h2>
+        <p>Learning Mindset</p>
+    </div>
+
+</div>
 
 <section id="about">
-    <h2 class="section-title">About Me</h2>
-    <div class="about">
-        <p>
-            I am an aspiring Data Analyst passionate about transforming raw data
-            into meaningful business insights. I specialize in SQL, Excel,
-            Power BI, Python, and Data Visualization. My goal is to help
-            organizations make data-driven decisions through effective analysis
-            and reporting.
-        </p>
-    </div>
+
+    <h2 class="title">About <span>Me</span></h2>
+
+    <p class="about">
+        I am an aspiring Data Analyst with a strong interest in
+        data visualization, business intelligence and analytics.
+        I enjoy solving business problems using SQL, Excel,
+        Power BI and Python. My goal is to help organizations
+        make data-driven decisions through impactful dashboards
+        and actionable insights.
+    </p>
+
 </section>
 
 <section id="skills">
-    <h2 class="section-title">Skills</h2>
 
-    <div class="skills">
-        <div class="skill-card">SQL</div>
-        <div class="skill-card">MySQL</div>
-        <div class="skill-card">Excel</div>
-        <div class="skill-card">Power BI</div>
-        <div class="skill-card">Python</div>
-        <div class="skill-card">Pandas</div>
-        <div class="skill-card">Data Cleaning</div>
-        <div class="skill-card">Data Visualization</div>
+    <h2 class="title">Skills & <span>Tools</span></h2>
+
+    <div class="skills-grid">
+
+        <div class="skill">
+            <div class="skill-title">
+                <span>Excel</span>
+                <span>90%</span>
+            </div>
+            <div class="progress"><div style="width:90%"></div></div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-title">
+                <span>SQL</span>
+                <span>85%</span>
+            </div>
+            <div class="progress"><div style="width:85%"></div></div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-title">
+                <span>Power BI</span>
+                <span>80%</span>
+            </div>
+            <div class="progress"><div style="width:80%"></div></div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-title">
+                <span>Python</span>
+                <span>75%</span>
+            </div>
+            <div class="progress"><div style="width:75%"></div></div>
+        </div>
+
     </div>
+
 </section>
 
 <section id="projects">
-    <h2 class="section-title">Projects</h2>
 
-    <div class="projects">
+<h2 class="title">Featured <span>Projects</span></h2>
 
-        <div class="project-card">
-            <h3>Sales Dashboard Analysis</h3>
-            <p>
-                Built an interactive Power BI dashboard to analyze sales
-                performance, revenue trends, and customer behavior.
-            </p>
-        </div>
+<div class="projects">
 
-        <div class="project-card">
-            <h3>Customer Segmentation</h3>
-            <p>
-                Used Python and Pandas to segment customers based on purchasing
-                patterns and improve targeting strategies.
-            </p>
-        </div>
+<div class="project">
 
-        <div class="project-card">
-            <h3>SQL Business Insights</h3>
-            <p>
-                Wrote advanced SQL queries to uncover revenue drivers,
-                top-performing products, and customer retention metrics.
-            </p>
-        </div>
+<img src="images/sales-dashboard.png">
 
-    </div>
+<div class="project-content">
+
+<h3>Sales Performance Dashboard</h3>
+
+<p>
+Interactive Power BI dashboard for sales analysis,
+revenue tracking and KPI monitoring.
+</p>
+
+<div class="tags">
+<span>Power BI</span>
+<span>DAX</span>
+<span>Excel</span>
+</div>
+
+<h4>Key Learnings</h4>
+
+<ul class="learn">
+<li>Data Modeling</li>
+<li>DAX Measures</li>
+<li>KPI Dashboard Design</li>
+<li>Business Storytelling</li>
+</ul>
+
+</div>
+</div>
+
+<div class="project">
+
+<img src="images/customer-analysis.png">
+
+<div class="project-content">
+
+<h3>Customer Churn Analysis</h3>
+
+<p>
+Analyzed customer behavior and churn patterns using
+Python and exploratory data analysis.
+</p>
+
+<div class="tags">
+<span>Python</span>
+<span>Pandas</span>
+<span>Matplotlib</span>
+</div>
+
+<h4>Key Learnings</h4>
+
+<ul class="learn">
+<li>Data Cleaning</li>
+<li>EDA</li>
+<li>Customer Segmentation</li>
+<li>Visualization</li>
+</ul>
+
+</div>
+</div>
+
+<div class="project">
+
+<img src="images/sql-project.png">
+
+<div class="project-content">
+
+<h3>SQL Business Insights</h3>
+
+<p>
+Used advanced SQL queries to identify top products,
+customer trends and revenue drivers.
+</p>
+
+<div class="tags">
+<span>MySQL</span>
+<span>CTE</span>
+<span>Window Functions</span>
+</div>
+
+<h4>Key Learnings</h4>
+
+<ul class="learn">
+<li>Complex Joins</li>
+<li>CTEs</li>
+<li>Window Functions</li>
+<li>Business Analytics</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
 </section>
 
-<section id="certifications">
-    <h2 class="section-title">Certifications</h2>
+<section>
 
-    <div class="certifications">
-        <div class="cert-card">
-            Microsoft Azure Fundamentals (AZ-900)
-        </div>
+<h2 class="title">Certifications</h2>
 
-        <div class="cert-card">
-            Data Analytics Certification
-        </div>
+<div class="certs">
 
-        <div class="cert-card">
-            Power BI for Business Intelligence
-        </div>
-    </div>
+<div class="cert">
+Microsoft Azure Fundamentals (AZ-900)
+</div>
+
+<div class="cert">
+Power BI Data Analytics Certification
+</div>
+
+<div class="cert">
+SQL for Data Analysis
+</div>
+
+</div>
+
 </section>
 
 <section id="contact">
-    <h2 class="section-title">Contact</h2>
 
-    <div class="contact">
-        <p>Email: your.somdubey004@gmail.com</p>
-        <p>LinkedIn: <a href="#">linkedin.com/in/som-dubey002</a></p>
-        <p>GitHub: <a href="#">github.com/yourusername</a></p>
-    </div>
+<h2 class="title">Contact <span>Me</span></h2>
+
+<div class="contact">
+
+<p>Email: yourmail@gmail.com</p>
+
+<p>
+GitHub:
+<a href="https://github.com/yourusername">
+github.com/yourusername
+</a>
+</p>
+
+<p>
+LinkedIn:
+<a href="https://linkedin.com/in/yourprofile">
+linkedin.com/in/yourprofile
+</a>
+</p>
+
+</div>
+
 </section>
 
 <footer>
-    <p>© 2026 Sharad Dubey | Data Analyst Portfolio</p>
+
+© 2026 Sharad Dubey | Data Analyst Portfolio
+
 </footer>
 
 </body>
